@@ -1,4 +1,4 @@
-document.write(`
+
 
 <footer class="footer">
   	 <div class="container">
@@ -43,5 +43,3 @@ document.write(`
   	 	</div>
   	 </div>
   </footer>
-
-`);

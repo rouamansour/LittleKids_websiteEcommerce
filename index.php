@@ -10,36 +10,22 @@
     <link href="css/owl.carousel.min.css" rel="stylesheet">
     <link href="css/owl.theme.default.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
-    <link href="layout.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
 </head>
 
 <body>
+    <?php
 
-    <script src="Header.js"></script>
+    session_start();
+    include("header.php");
+    include("banner.php");
+    include("customers/Product.php");
+    include("footer.php");
 
-
-    <!-- slider area -->
-    <div class="slider-area">
-        <div class="slider">
-            <div>
-                <a href="#"><img src="pictures/istockphoto-1285490580-170667a.jpg"></a>
-            </div>
-            <div>
-                <a href="#"><img src="pictures/child-childrens-baby-children-s.jpg"></a>
-            </div>
-            <div>
-                <a href="#"><img src="pictures/istockphoto-941424180-612x612.jpg"></a>
-            </div>
-            <div>
-            </div>
-        </div>
-
-
-        <script src="Footer.js"></script>
+    ?>
 
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

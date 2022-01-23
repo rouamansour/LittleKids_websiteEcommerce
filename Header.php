@@ -1,5 +1,4 @@
-document.write(`
-
+<header>
 <input type="checkbox" id="check">
 	<nav>
 		<div class="icon">Little <b style="color: rgb(32, 52, 235);">Kids </b> Shop</div>
@@ -19,6 +18,5 @@ document.write(`
 			<span class="fa fa-times" id="times"></span>
 		</label>
 	</nav>
-	
+</header>	
 
-`);
