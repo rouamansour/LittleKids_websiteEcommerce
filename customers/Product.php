@@ -1,4 +1,5 @@
 <?php
+    echo "<h3>Latest Product</h3>";
     try 
     {   
         $pdo=new PDO("mysql:host=localhost;dbname=kids",'root','') ;
@@ -10,16 +11,14 @@
                 {
                     echo "
               <div class='row-4'>
-              ";
-                
-                        
+              ";        
                 echo"
                     <div class='col-md-3 col-sm-6'>
                         <div class='thumbnail' >
                             <center>
                                 <div class='caption'>
                                     <img src='pictures/".$ligne['prd_img']."'  class='img-responsive'  />
-                                    <h3>".$ligne['prd_title']."</h3>
+                                    <h4>".$ligne['prd_title']."</h4>
                                     <p>Prix :  ".$ligne['prd_price']."</p>		
                                 </div>
                                 <a  class='btn btn-default' >View details</a>
