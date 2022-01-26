@@ -7,9 +7,20 @@
 			<span class="fa fa-search"></span>
 		</div>
 		<ol>
-			<li><a href="#">Home</a></li>
+			<li><a href="index.php">Home</a></li>
 			<li><a href="#">Category</a></li>
-			<li><a href="#">Cart</a></li>
+			<li><a href="customers/cart.php"><i class="fas fa-shopping-cart"></i>Cart 
+			<?php
+
+			if (isset($_SESSION['cart'])){
+				$count = count($_SESSION['cart']);
+				echo "<span id=\"cart_count\" class=\"text-warning bg-light\">$count</span>";
+			}else{
+				echo "<span id=\"cart_count\" class=\"text-warning bg-light\">0</span>";
+			}
+
+			?>
+		</a></li>
 			<li><a href="#">Contact</a></li>
 			<li><a href="#"> Login<ion-icon name="log-in-outline"></ion-icon></a></li>
 		</ol>
