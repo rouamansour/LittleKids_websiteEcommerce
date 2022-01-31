@@ -10,17 +10,15 @@ if (isset($_POST['add'])){
             echo "<script>alert('Product is already added in the cart..!')</script>";
             echo "<script>window.location ='index.php'</script>";
         }else{
-
             $count = count($_SESSION['cart']);
             $item_array = array(
                 'product_id' => $_POST['product_id']
             );
-
             $_SESSION['cart'][$count] = $item_array;
         }
     }else{
         $item_array = array(
-                'product_id' => $_POST['product_id']
+            'product_id' => $_POST['product_id']
         );
         // Create new session variable
         $_SESSION['cart'][0] = $item_array;
@@ -53,7 +51,6 @@ if (isset($_POST['add'])){
     include("Header.php");
     include("banner.php");
     ?>
-
     <div class="container">
         <div class="row text-center py-5">
         <?php
@@ -61,7 +58,7 @@ if (isset($_POST['add'])){
                 while ($row = mysqli_fetch_assoc($result)){
                     component($row['prd_title'], $row['prd_price'], $row['prd_img'], $row['prd_id']);
                 }
-            ?>
+        ?>
         </div>
     </div>
     <?php
@@ -69,9 +66,7 @@ if (isset($_POST['add'])){
     ?>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
         <script src="js/jquery.js"></script>
-        <!-- bxslider minified js file -->
         <script src="js/jquery.bxslider.min.js"></script>
         <script src="js/owl.carousel.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>

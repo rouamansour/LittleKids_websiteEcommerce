@@ -64,9 +64,7 @@ if (isset($_POST['remove'])){
                 ?>
             </div>
         </div>
-        <div class="col-md-4 offset-md-1 border rounded mt-5 bg-white h-25">
-
-        
+        <div class="col-md-4 offset-md-1 border rounded mt-5 bg-white h-25">        
     </div>
 </div>
 

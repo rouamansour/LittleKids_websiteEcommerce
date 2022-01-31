@@ -22,6 +22,7 @@
     include("../header.php");
     require_once('component.php');
     ?>
+    <br>
         <?php
         Detailproduct ('../pictures/cotton_shorts.jpg', 'shortes', 12, 1);
         // Detailproduct ('../pictures/chapeau.jpg', 'Hat', 18, 2);
@@ -82,9 +83,7 @@
     ?>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
         <script src="js/jquery.js"></script>
-        <!-- bxslider minified js file -->
         <script src="js/jquery.bxslider.min.js"></script>
         <script src="js/owl.carousel.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
