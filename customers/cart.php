@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('createdb.php');
+require_once('createdb.php');
 require_once('component.php');
 
 $db = new createdb("kids", "products");
@@ -16,8 +16,6 @@ if (isset($_POST['remove'])){
       }
   }
 }
-
-
 ?>
 
 <html lang="en">
@@ -33,18 +31,16 @@ if (isset($_POST['remove'])){
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
-
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
 </head>
 <body>
-<h1>Welcome shopping cart</h1>
+<!-- <h1>Welcome shopping cart</h1> -->
 <?php
-   include("../header.php");
+   require_once("../header.php");
 ?>
 <div class="container-fluid">
     <div class="row px-5">
@@ -53,12 +49,15 @@ if (isset($_POST['remove'])){
                 <h6>My Cart</h6>
                 <hr>
                 <?php
-                $product_id=array_column($_session['cart'],'product_id');
-                $result=$db->getData();
-                while($row=mysqli_fetch_assoc($result)){
-                    foreach($product_id as $id){
-                        if($row['id']==$id){
-                            cartElement($row['prd_img'],$row['prd_ititle'],$row['prd_price']);
+                if(isset($_SESSION['cart']))
+                {
+                    $prd_id=array_column($_session['cart'],'prd_id');
+                    $result=$db->getData();
+                    while($row=mysqli_fetch_assoc($result)){
+                        foreach($prd_id as $id){
+                            if($row['id']==$id){
+                                cartElement($row['prd_img'],$row['prd_title'],$row['prd_price']);
+                            }
                         }
                     }
                 }

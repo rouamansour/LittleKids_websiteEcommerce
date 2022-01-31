@@ -18,13 +18,10 @@ if (isset($_POST['add'])){
 
             $_SESSION['cart'][$count] = $item_array;
         }
-
     }else{
-
         $item_array = array(
                 'product_id' => $_POST['product_id']
         );
-
         // Create new session variable
         $_SESSION['cart'][0] = $item_array;
         //print_r($_SESSION['cart']);
@@ -52,9 +49,8 @@ if (isset($_POST['add'])){
 
 <body>
     <?php
-
     session_start();
-    include("header.php");
+    include("Header.php");
     include("banner.php");
     ?>
 
