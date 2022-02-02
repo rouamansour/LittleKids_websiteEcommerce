@@ -3,28 +3,28 @@ require_once('customers/createdb.php');
 require_once('customers/component.php');
 $database = new createdb("kids", "products");
 
-if (isset($_POST['add'])){
-    if(isset($_SESSION['cart'])){
-        $item_array_id = array_column($_SESSION['cart'], "prd_id");
-        if(in_array($_POST['prd_id'], $item_array_id)){
-            echo "<script>alert('Product is already added in the cart..!')</script>";
-            echo "<script>window.location ='index.php'</script>";
-        }else{
-            $count = count($_SESSION['cart']);
-            $item_array = array(
-                'product_id' => $_POST['product_id']
-            );
-            $_SESSION['cart'][$count] = $item_array;
-        }
-    }else{
-        $item_array = array(
-            'product_id' => $_POST['product_id']
-        );
-        // Create new session variable
-        $_SESSION['cart'][0] = $item_array;
-        //print_r($_SESSION['cart']);
-    }
-}
+// if (isset($_POST['add'])){
+//     if(isset($_SESSION['cart'])){
+//         $item_array_id = array_column($_SESSION['cart'], "prd_id");
+//         if(in_array($_POST['prd_id'], $item_array_id)){
+//             echo "<script>alert('Product is already added in the cart..!')</script>";
+//             echo "<script>window.location ='index.php'</script>";
+//         }else{
+//             $count = count($_SESSION['cart']);
+//             $item_array = array(
+//                 'product_id' => $_POST['product_id']
+//             );
+//             $_SESSION['cart'][$count] = $item_array;
+//         }
+//     }else{
+//         $item_array = array(
+//             'product_id' => $_POST['product_id']
+//         );
+//         // Create new session variable
+//         $_SESSION['cart'][0] = $item_array;
+//         //print_r($_SESSION['cart']);
+//     }
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,10 +54,16 @@ if (isset($_POST['add'])){
     <div class="container">
         <div class="row text-center py-5">
         <?php
+        try{
                 $result = $database->getData();
                 while ($row = mysqli_fetch_assoc($result)){
                     component($row['prd_title'], $row['prd_price'], $row['prd_img'], $row['prd_id']);
                 }
+            }
+            catch(Exception $e)
+            {
+                echo"ERREUR : ".$e->getMessage();
+            }
         ?>
         </div>
     </div>

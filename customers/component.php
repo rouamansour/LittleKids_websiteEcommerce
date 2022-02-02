@@ -4,13 +4,13 @@ function component($prd_title, $prd_price, $prd_img, $prd_id){
     $element = "
     
     <div class=\"col-md-3 col-sm-6 my-3 my-md-0\">
-                <form action=\"customers/cart.php\" method=\"post\">
+                <form action=\"customers/cart.php\" method=\"GET\">
                     <div class=\"card shadow\">
                         <div>
-                            <img src=\"$prd_img\" alt=\"Image1\" class=\"img-fluid card-img-top\">
+                            <img src='$prd_img' alt=\"Image\" class=\"img-fluid card-img-top\">
                         </div>
                         <div class=\"card-body\">
-                            <a href='customers/Detail_Product.php'><h5 class=\"card-title\">$prd_title</h5></a>
+                            <a href='customers/Detail_Product.php?id= \".$prd_id\"'><h5 class=\"card-title\">$prd_title</h5></a>
                             <h6>
                                 <i class=\"fas fa-star\"></i>
                                 <i class=\"fas fa-star\"></i>
